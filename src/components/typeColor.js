@@ -1,6 +1,6 @@
 const colorTypes = {
     "normal":"default",
-    "fighting":"#f50ad43",
+    "fighting":"#f0a535",
     "flying":"#2db7f5",
     "poison":"#87d068",
     "ground":"#892d1e",
