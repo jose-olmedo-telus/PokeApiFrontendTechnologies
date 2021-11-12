@@ -20,7 +20,8 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <h1 style={{ marginTop: "4rem" }}>Pokemon API</h1>
+      <h1 style={{ marginTop: "4rem" }}>Pokemon API - Frontend Technologies</h1>
+      <h3 style={{fontFamily:"Helvetica", fontStyle:"italic"}}> Alejandro Olmedo && Tirso Cordova</h3>
       <PokeTable rawPokemons={pokemons} />
     </div>
   );
