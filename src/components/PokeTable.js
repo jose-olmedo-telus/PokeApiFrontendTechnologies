@@ -24,7 +24,7 @@ const PokeTable = ({ rawPokemons }) => {
     }
     console.log(arrPokeDetails);
     setDataSource(arrPokeDetails);
-    setFilteredDataSource(arrPokeDetails);
+    setFilteredDataSource(arrPokeDetails.slice(10));
   };
   useEffect(() => {
     if (rawPokemons.length !== 0) fetchEachPoke();
@@ -47,7 +47,7 @@ const PokeTable = ({ rawPokemons }) => {
     {
       title: "Imagen",
       dataIndex: "sprites",
-      render: ({ front_default }) => <Image src={front_default} />,
+      render: ({ other }) => <Image height="100px" width="100px" src={other.dream_world.front_default} />,
     },
     {
       title: "Tipo de pokemon",
@@ -92,7 +92,7 @@ const PokeTable = ({ rawPokemons }) => {
         }
         onChange={(value, { pokemonObj }) => {
           if (value === "") {
-            setFilteredDataSource(dataSource);
+            setFilteredDataSource(dataSource.slice(10));
           } else {
             setFilteredDataSource(
               dataSource.filter((pokepoke) => {
