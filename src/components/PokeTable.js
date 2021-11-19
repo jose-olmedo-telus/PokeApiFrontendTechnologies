@@ -62,10 +62,9 @@ const PokeTable = ({ rawPokemons }) => {
   ];
   const contentStyle = {
     height: "160px",
-    color: "#fff",
     lineHeight: "160px",
     textAlign: "center",
-    background: "#364d79",
+    background: "#badaf5",
   };
 
   return (
@@ -73,9 +72,9 @@ const PokeTable = ({ rawPokemons }) => {
       {dataSource.length >= 10 && (
         <Carousel autoplay={true} effect="fade" dotPosition="bottom">
           {dataSource.slice(0, 10).map((poke) => (
-            <div key={poke.key}>
+            <div  key={poke.key}>
               <Image src={poke.sprites.front_default} />
-              <h1 style={contentStyle}>{poke.name}</h1>
+              <h1 style={{...contentStyle , color:colorTypes[poke.types[0].type.name]}}>{poke.name}</h1>
             </div>
           ))}
         </Carousel>
