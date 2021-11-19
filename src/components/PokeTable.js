@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Image, Tag, Carousel, AutoComplete } from "antd";
+import {HeartTwoTone, ThunderboltTwoTone} from '@ant-design/icons'
 import axios from "axios";
 import colorTypes from "./typeColor";
 
@@ -43,6 +44,11 @@ const PokeTable = ({ rawPokemons }) => {
     {
       title: "Altura",
       dataIndex: "height",
+    },
+    {
+      title: "Estadisticas",
+      dataIndex: "stats",
+      render: (stats) => (<p><p style={{color:"#eb2f96"}}>{stats[0].base_stat} HP <HeartTwoTone twoToneColor="#eb2f96"/> </p><p style={{color:"#f0c03e"}}>{stats[1].base_stat} AD <ThunderboltTwoTone  twoToneColor="#f0c03e" /></p></p>),
     },
     {
       title: "Imagen",
