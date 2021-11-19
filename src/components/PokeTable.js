@@ -112,10 +112,10 @@ const PokeTable = ({ rawPokemons }) => {
         columns={columns}
         pagination={{
           defaultPageSize: 25,
-          position: ["bottomCenter"],
+          position: ["topCenter", "bottomCenter"],
           pageSizeOptions: [5, 10, 25, 50],
           showTotal: (total, range) =>
-            `${range[0]}-${range[1]} of ${total} items`,
+            `${range[0]}-${range[1]} de ${total} pokemones`,
         }}
       />
     </>
