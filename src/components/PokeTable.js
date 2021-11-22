@@ -71,12 +71,14 @@ const PokeTable = ({ rawPokemons }) => {
     lineHeight: "160px",
     textAlign: "center",
     background: "#badaf5",
+
   };
 
   return (
     <>
       {dataSource.length >= 10 && (
-        <Carousel autoplay={true} effect="fade" dotPosition="bottom">
+          <div>
+        <Carousel autoplay={true} effect="fade" dotPosition="bottom" style={{display: "flex"}}>
           {dataSource.slice(0, 10).map((poke) => (
             <div  key={poke.key}>
               <Image src={poke.sprites.front_default} />
@@ -84,6 +86,7 @@ const PokeTable = ({ rawPokemons }) => {
             </div>
           ))}
         </Carousel>
+          </div>
       )}
 
       <AutoComplete
@@ -111,7 +114,7 @@ const PokeTable = ({ rawPokemons }) => {
         dataSource={filteredDataSource}
         columns={columns}
         pagination={{
-          defaultPageSize: 25,
+          defaultPageSize: 30,
           position: ["topCenter", "bottomCenter"],
           display: "flex",
           pageSizeOptions: [5, 10, 25, 50],
