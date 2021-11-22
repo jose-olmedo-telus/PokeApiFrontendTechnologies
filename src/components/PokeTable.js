@@ -113,6 +113,7 @@ const PokeTable = ({ rawPokemons }) => {
         pagination={{
           defaultPageSize: 25,
           position: ["topCenter", "bottomCenter"],
+          display: "flex",
           pageSizeOptions: [5, 10, 25, 50],
           showTotal: (total, range) =>
             `${range[0]}-${range[1]} de ${total} pokemones`,
